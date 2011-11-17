@@ -8,6 +8,7 @@
     "type": "git",
     "url": "git://github.com/lmws/node-twitter-stream.git"
   },
+  "main": "twitter-stream",
   "engines": {
     "node": ">=0.6"
   },
