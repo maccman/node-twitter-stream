@@ -1,9 +1,9 @@
 {
   "author": "Raymond Liu <raymond@lmws.net> (http://lmws.net)",
   "name": "twitter-stream",
-  "description": "Read statuses from Twitter stream",
-  "version": "0.1.0",
-  "homepage": "http://lmws.net/node-twitter-stream",
+  "description": "Read statuses from Twitter stream. Currently unsable, please do not install.",
+  "version": "0.0.2",
+  "homepage": "https://github.com/lmws/node-twitter-stream",
   "repository": {
     "type": "git",
     "url": "git://github.com/lmws/node-twitter-stream.git"
