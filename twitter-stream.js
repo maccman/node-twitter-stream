@@ -3,8 +3,8 @@ var events = require('events');
 
 exports.connect = function(options) {
   [ 'action', 'screen_name', 'password'].forEach(function(requiredOption) {
-	  if (options[requiredOption] === undefined) throw requiredOption + " is missing";
-	});
+    if (options[requiredOption] === undefined) throw requiredOption + " is missing";
+  });
 
   var emitter = new events.EventEmitter;
   var request = https.request({
