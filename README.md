@@ -7,8 +7,8 @@ var ts = require('twitter-stream');
 
 var stream = ts.connect({
   screen_name: '',
-	password: '',
-	action: 'sample',
+  password: '',
+  action: 'sample',
 });
 
 stream.on('status', function(status) {
