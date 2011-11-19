@@ -17,6 +17,9 @@ exports.connect = function(options) {
       emitter.emit('status', JSON.parse(chunk));
     });
   });
+  request.on('error', function(error) {
+    emitter.emit('error', error);
+  });
   request.end();
   return emitter;
 };
