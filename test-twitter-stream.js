@@ -8,5 +8,8 @@ require('fs').readFile('test-config.json', 'utf8', function(error, config_file_d
   stream.on('status', function(status) {
     console.info(status);
   });
+  stream.on('error', function(error) {
+    console.info(error);
+  });
 })
 

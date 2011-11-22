@@ -13,6 +13,11 @@ exports.connect = function(options) {
 
   request.on('response', function(response) {
     response.setEncoding('utf8');
+    if (response.statusCode !== 200) {
+      var error = String(response.statusCode);
+      emitter.emit('error', error);
+      return;
+    }
     response.on('data', function(chunk) {
       emitter.emit('status', JSON.parse(chunk));
     });
@@ -35,7 +40,7 @@ var ensureRequiredOptions = function(options) {
 
 var prepareQueryString = function(params) {
   var queryString = params ? '?' + querystring.stringify(params) : '';
-	return queryString;
+  return queryString;
 }
 
 var prepareRequestOptions = function(options) {
