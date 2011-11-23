@@ -27,6 +27,10 @@ exports.connect = function(options) {
     emitter.emit('error', error);
   });
 
+  emitter.on('abort', function() {
+    request.abort();
+  });
+
   request.end();
 
   return emitter;
