@@ -35,4 +35,7 @@ stream.on('status', function(status) {
 stream.on('error', function(error) function{
   console.error(error);
 });
+
+//Aborting the stream
+stream.abort();
 ```

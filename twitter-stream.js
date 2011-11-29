@@ -8,6 +8,12 @@ exports.connect = function(options) {
   options.queryString = prepareQueryString(options.params);
 
   var emitter = new events.EventEmitter;
+  emitter.abort = function() {
+    request.abort();
+  };
+  emitter.on('abort', function() {
+    emitter.abort();
+  });
 
   var request = https.request(prepareRequestOptions(options));
 
@@ -25,10 +31,6 @@ exports.connect = function(options) {
 
   request.on('error', function(error) {
     emitter.emit('error', error);
-  });
-
-  emitter.on('abort', function() {
-    request.abort();
   });
 
   request.end();
