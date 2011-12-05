@@ -39,3 +39,11 @@ stream.on('error', function(error) function{
 //Aborting the stream
 stream.abort();
 ```
+
+## Contribution
+
+Fork and send pull requests
+
+Bugs and feature request may be submitted to:
+https://github.com/lmws/node-twitter-stream/issues
+
