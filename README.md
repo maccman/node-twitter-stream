@@ -40,6 +40,16 @@ stream.on('error', function(error) function{
 stream.abort();
 ```
 
+```javascript
+//Pass in parameters
+var stream = ts.connect({
+  screen_name: '',
+  password: '',
+  action: 'filter',
+  params: {track: 'Twitter'},
+});
+```
+
 ## Contribution
 
 Fork and send pull requests
