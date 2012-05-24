@@ -24,8 +24,13 @@ exports.connect = function(options) {
       emitter.emit('error', error);
       return;
     }
+    var data = '';
     response.on('data', function(chunk) {
-      emitter.emit('status', JSON.parse(chunk));
+      data += chunk;
+      try {
+        emitter.emit('status', JSON.parse(data));
+        data = '';
+      } catch(e) { }
     });
   });
 
